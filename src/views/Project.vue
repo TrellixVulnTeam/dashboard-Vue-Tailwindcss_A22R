@@ -10,7 +10,7 @@
     <div class="bg-gray-200 my-4 p-4 flex justify-between">
         <div class="w-1/4">
             <input type="text" v-model="search" placeholder="Search.."
-            class="inline-block appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:border-green-500" >
+            class="inline-block appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-green-500" >
         </div>
         <div class="w-1/4">
             <multiselect v-model="value" :options="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Pick a value"></multiselect>
@@ -80,16 +80,16 @@
             <form @submit.prevent="addProject">
                 <div class="flex flex-wrap my-8">
                     <div class="w-full my-2">
-                        <input type="text" placeholder="Project Title" v-model="input.info" class="border border-gray-300 leading-9 w-full px-2">
+                        <input type="text" required placeholder="Project Title" v-model="input.info" class="border border-gray-300 leading-9 w-full px-2">
                     </div>
                     <div class="w-full my-2">
-                        <multiselect v-model="input.status" :options="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="choose status of project"></multiselect>
+                        <multiselect required v-model="input.status" :options="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="choose status of project"></multiselect>
                     </div>
                     <div class="w-full my-4">
-                        <input type="date" placeholder="enter date created of project" v-model="input.date" class="border border-gray-300 leading-9 w-full px-2">
+                        <input  type="date" required placeholder="enter date created of project" v-model="input.date" class="border border-gray-300 leading-9 w-full px-2">
                     </div>
                     <div class="w-full my-4">
-                        <input type="number" min="0" placeholder="enter price of project" v-model="input.price" class="border border-gray-300 leading-9 w-full px-2">
+                        <input type="number" required min="0" placeholder="enter price of project" v-model="input.price" class="border border-gray-300 leading-9 w-full px-2">
                     </div>
                     <div class="w-full my-4  flex justify-end">
                         <button type="submit" class="w-1/3 bg-gray-300 mx-2 p-2 rounded" style="background: linear-gradient(90deg,#55c3b7 0,#5fd0a5 48%,#66da90 100%);color: white;">Save</button>

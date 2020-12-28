@@ -12,7 +12,7 @@
     <div class="bg-gray-200 my-4 p-4 flex justify-between">
         <div class="w-1/4">
             <input type="text" v-model="search" placeholder="Search.."
-            class="inline-block appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:border-green-500" >
+            class="inline-block appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-green-500" >
         </div>
         <div class="w-1/4">
             <multiselect v-model="value" :options="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Pick a value"></multiselect>

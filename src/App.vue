@@ -71,8 +71,8 @@
   bottom: 0;
   width: 100%;
   height: 4rem;   ">
-    Made by Ryon Mereboer, the lovely developer ❤️<br>
-    Copyright © Rylee 2020
+    Made by Zafer Mushtaha, the lovely developer ❤️<br>
+    Copyright © zafer 2020
 </footer>
 </div>
 </div>
