@@ -52,24 +52,24 @@
         </thead>
         <tbody class="shadow">
             <tr v-for="(item,index) in filteredList" :key="index" class="shadow">
-                <td data-label="Order ID" class="py-3" v-if="item.status === value || value === 'All'">
+                <td data-label="Order ID" class="py-3">
                 <div class="text-center text-gray-600">
                     <p>{{index+1}}</p>
                 </div>
                 </td>
-                <td data-label="Datum" class="productinformatie" v-if="item.status === value || value === 'All'">
+                <td data-label="Datum" class="productinformatie">
                 <div class="text-center text-gray-600">
                     <p>{{item.date}}</p>
                 </div>
                 </td>
 
-                <td data-label="Aantal" class="omzet text-gray-600  text-center" v-if="item.status === value || value === 'All'">
+                <td data-label="Aantal" class="omzet text-gray-600  text-center">
                 <p>
                     {{item.info}}
                 </p>
                 </td>
-                <td data-label="Prijs" class="sales  text-gray-600  text-center" v-if="item.status === value || value === 'All'">{{item.status}}</td>
-                <td data-label="Totaal" class="totaal  text-gray-600  text-center" v-if="item.status === value || value === 'All'">{{item.price}}{{currency}}</td>
+                <td data-label="Prijs" class="sales  text-gray-600  text-center">{{item.status}}</td>
+                <td data-label="Totaal" class="totaal  text-gray-600  text-center">{{item.price}}{{currency}}</td>
             </tr>
         </tbody>
         </table>
@@ -123,7 +123,7 @@ export default {
   computed: {
     filteredList () {
       return this.projects.filter(item => {
-        return item.info.toLowerCase().includes(this.search.toLowerCase())
+        return (item.info.toLowerCase().includes(this.search.toLowerCase()) && (item.status === this.value || this.value === 'All'))
       })
     }
   },

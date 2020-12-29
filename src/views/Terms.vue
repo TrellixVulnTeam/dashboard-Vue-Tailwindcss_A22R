@@ -5,8 +5,8 @@
             <div class="lg:w-1/4 w-full">
             <p class="font-bold text-3xl text-start">Blood Bank</p>
             </div>
-    </div>
-    </div>
+        </div>
+        </div>
 
     <div class="my-6">
 <table class="table-responsive-full sort-table  rounded-lg  bg-white lg:w-full">

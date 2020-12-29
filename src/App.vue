@@ -53,6 +53,18 @@
                             Calender
                             </a>
                         </router-link>
+                        <router-link to="pharmacy" class=" my-1  hover:text-green-400 cursor-pointer w-full rounded p-4 transition ease-in-out delay-200">
+                            <i class="far fa-calendar-alt"></i>
+                            <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
+                            pharmacy
+                            </a>
+                        </router-link>
+                        <router-link to="appointment" class=" my-1  hover:text-green-400 cursor-pointer w-full rounded p-4 transition ease-in-out delay-200">
+                            <i class="fas fa-clock"></i>
+                            <a v-show="showlink" class="text-base ml-2 font-semibold font-sans">
+                            Appointment
+                            </a>
+                        </router-link>
                     </div>
                 </div>
                 </nav>

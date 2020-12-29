@@ -8,6 +8,8 @@ import terms from '../views/Terms.vue'
 import staffs from '../views/Staffs.vue'
 import stations from '../views/stations.vue'
 import calender from '../views/calender.vue'
+import pharmacy from '../views/Pharmacy.vue'
+import Appoinement from '../views/Appointment.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,8 +19,9 @@ const routes = [
   { path: '/terms', name: 'terms', component: terms },
   { path: '/staffs', name: 'staffs', component: staffs },
   { path: '/stations', name: 'stations', component: stations },
-  { path: '/calender', name: 'calender', component: calender }
-
+  { path: '/calender', name: 'calender', component: calender },
+  { path: '/pharmacy', name: 'pharmacy', component: pharmacy },
+  { path: '/appoinement', name: 'appoinement', component: Appoinement }
 ]
 
 const router = new VueRouter({
