@@ -5,8 +5,8 @@
             <div class="lg:w-1/4 w-full">
             <p class="font-bold text-3xl text-start">Blood Bank</p>
             </div>
-    </div>
-    </div>
+        </div>
+        </div>
 
     <div class="my-6">
 <table class="table-responsive-full sort-table  rounded-lg  bg-white lg:w-full">
@@ -31,7 +31,7 @@
           <h2>change Quntity of group {{this.editData.title}}</h2>
           <form @submit.prevent="editeQun">
           <div class="my-4">
-            <input type="number"  min="0" placeholder="enter number of group" v-model="editData.qunt" class="border border-gray-300 leading-9 w-full px-2">
+            <input type="number"  min="0" placeholder="enter number of group" v-model.number="editData.qunt" class="border border-gray-300 leading-9 w-full px-2">
           </div>
               <div class="w-full my-4  flex justify-end">
                 <button type="submit"  class="w-1/3 bg-gray-300 mx-2 p-2 rounded" style="background: linear-gradient(90deg,#55c3b7 0,#5fd0a5 48%,#66da90 100%);color: white;">Save</button>
@@ -70,7 +70,7 @@ export default {
       console.log(index)
     },
     editeQun () {
-      this.groups[this.index].qunt = this.editData.qunt
+      this.groups[this.index].qunt = parseInt(this.editData.qunt)
       this.close()
     },
     close () {

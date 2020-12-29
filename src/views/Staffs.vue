@@ -12,14 +12,14 @@
     <div class="bg-gray-200 my-4 p-4 flex justify-between">
         <div class="w-1/4">
             <input type="text" v-model="search" placeholder="Search.."
-            class="inline-block appearance-none border rounded py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:border-green-500" >
+            class="inline-block appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-green-500" >
         </div>
         <div class="w-1/4">
             <multiselect v-model="value" :options="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Pick a value"></multiselect>
         </div>
     </div>
     <div class="grid grid-cols-5 gap-4"  >
-        <div v-for="(item,index) in filteredList" :key="index" v-if="item.type === value || value === 'All'">
+        <div v-for="(item,index) in filteredList" :key="index">
                 <div class="card bg-gray-200 shadow border p-4 lg:w-full bg-gray-100 shadow-lg rounded">
                     <div class="flex justify-center my-4">
                         <div class="img w-20 h-20">
@@ -63,7 +63,7 @@ export default {
   computed: {
     filteredList () {
       return this.staffs.filter(item => {
-        return item.name.toLowerCase().includes(this.search.toLowerCase())
+        return (item.name.toLowerCase().includes(this.search.toLowerCase()) && (item.type === this.value || this.value === 'All'))
       })
     }
   }
