@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "npm run lint -- --fix && vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "vuecli-service build",
+    "lint": "vue-cli-service lint",
+    "fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "apexcharts": "^3.23.0",

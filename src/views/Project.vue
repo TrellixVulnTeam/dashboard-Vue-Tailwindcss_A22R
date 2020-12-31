@@ -1,6 +1,6 @@
 <template>
     <div>
-    <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;background-color:#fafbfc">
+    <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
     <div class="px-4 flex flex-wrap mb-6">
             <div class="lg:w-1/4 w-full">
             <p class="font-bold text-3xl text-start">Projects</p>
@@ -12,40 +12,46 @@
             <input type="text" v-model="search" placeholder="Search.."
             class="inline-block appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-green-500" >
         </div>
-        <div class="w-1/4">
+        <div class="w-1/3 flex justify-center items-center">
+        <p class="text-sm text-gray-600 mr-2" style="white-space: nowrap;">Filter By Status ...</p>
             <multiselect v-model="value" :options="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Pick a value"></multiselect>
         </div>
         <div class="w-1/4">
-            <button @click="showprojectModal" class="rounded w-full leading-9" style="background: linear-gradient(90deg,#55c3b7 0,#5fd0a5 48%,#66da90 100%);color: white;"><i class="fas fa-plus"></i>Add New</button>
+            <button @click="showprojectModal" class="rounded w-full leading-9" style="background:linear-gradient(135deg, #5b247a 0%,#1bcedf 100%);color: white;"><i class="fas fa-plus"></i>Add New</button>
         </div>
     </div>
     <div class="my-6">
         <table id="content-table3" class="table-responsive-full sort-table  rounded-lg shadow bg-white lg:w-full">
             <thead>
-            <tr class="bg-green-400 text-white" style="transition: all .3s ease-in-out">
+            <tr class="text-white" style="transition: all .3s ease-in-out ;background:linear-gradient(135deg, #5b247a 0%,#1bcedf 100%);">
             <th class="flex justify-center p-4">
                 <div class="flex justify-between items-center">
                 <p class="mr-2 text-base">ID</p>
+                <span @click="sortby()"><i class="fas fa-arrow-up"></i></span>
                 </div>
             </th>
             <th class="prijs p-4">
-                <div class="flex justify-center">
+                <div class="flex justify-center items-center">
                 <p class="mr-2 text-base">Date</p>
+                <span @click="sortby('date')"><i class="fas fa-arrow-up"></i></span>
                 </div>
             </th>
             <th class="omzet p-4">
-                <div class="flex justify-center">
+                <div class="flex justify-center items-center">
                 <p class="mr-2 text-base">informatie</p>
+                <span @click="sortby()"><i class="fas fa-arrow-up"></i></span>
                 </div>
             </th>
             <th class="sales p-4">
-                <div class="flex justify-center">
+                <div class="flex justify-center items-center">
                 <p class="mr-2 text-base">Status</p>
+                <span @click="sortby()"><i class="fas fa-arrow-up"></i></span>
                 </div>
             </th>
             <th class="totaal p-4">
-                <div class="flex justify-center">
+                <div class="flex justify-center items-center">
                 <p class="mr-2 text-base">Price</p>
+                <span @click="sortby('price')"><i class="fas fa-arrow-up"></i></span>
                 </div>
             </th>
             </tr>
@@ -106,11 +112,11 @@ export default {
   data () {
     return {
       projects: [
-        { date: '28-08-2020', info: 'consectetur adipiscing', status: 'completed', price: '250' },
+        { date: '28-08-2019', info: 'consectetur adipiscing', status: 'completed', price: '210' },
         { date: '28-08-2020', info: 'vitae fermentum', status: 'canceled', price: '250' },
-        { date: '28-08-2020', info: 'Orci varius natoque', status: 'completed', price: '250' },
-        { date: '28-08-2020', info: 'magnis dis parturient', status: 'canceled', price: '250' },
-        { date: '28-08-2020', info: 'enim diam tristique', status: 'ongoing', price: '250' }
+        { date: '28-09-2020', info: 'Orci varius natoque', status: 'completed', price: '520' },
+        { date: '28-08-2021', info: 'magnis dis parturient', status: 'canceled', price: '310' },
+        { date: '28-06-2020', info: 'enim diam tristique', status: 'ongoing', price: '120' }
       ],
       currency: '$',
       search: '',
@@ -139,6 +145,9 @@ export default {
     addProject () {
       this.projects.push(this.input)
       this.show = false
+    },
+    sortby (prop) {
+      this.projects.sort((a, b) => a[prop] < b[prop] ? -1 : 1)
     }
   }
 }

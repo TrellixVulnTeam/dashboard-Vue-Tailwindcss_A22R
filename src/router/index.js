@@ -10,6 +10,7 @@ import stations from '../views/stations.vue'
 import calender from '../views/calender.vue'
 import pharmacy from '../views/Pharmacy.vue'
 import Appoinement from '../views/Appointment.vue'
+import BloodGroup from '../views/BloodGroup.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -21,7 +22,8 @@ const routes = [
   { path: '/stations', name: 'stations', component: stations },
   { path: '/calender', name: 'calender', component: calender },
   { path: '/pharmacy', name: 'pharmacy', component: pharmacy },
-  { path: '/appoinement', name: 'appoinement', component: Appoinement }
+  { path: '/appointment', name: 'appoinement', component: Appoinement },
+  { path: '/bloodgroup/:group', name: 'BloodGroup', component: BloodGroup, props: true }
 ]
 
 const router = new VueRouter({

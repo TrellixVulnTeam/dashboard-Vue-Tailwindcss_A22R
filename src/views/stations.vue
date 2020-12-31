@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;background-color:#fafbfc">
+        <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
         <div class="px-4 flex flex-wrap mb-6">
             <div class="lg:w-1/4 w-full">
             <p class="font-bold text-3xl text-start">Stations</p>
@@ -30,7 +30,7 @@
           @closeclick="handleInfoWindowClose"
 
       >
-          <div class="info-window" style="padding:16px">
+          <div class="info-window text-ingido-800" style="padding:16px">
             {{item.name}}
         </div>
       </gmap-info-window>
@@ -98,6 +98,6 @@ export default {
 .gm-style .gm-style-iw-c {
   padding: 4px !important;
   max-height: 48px !important;
-  color: #45e941 !important;
+  color: rgba(67, 56, 202, 1) !important;
 }
 </style>
