@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;background-color:#fafbfc">
+        <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
         <div class="px-4 flex flex-wrap mb-6">
             <div class="lg:w-1/4 w-full">
             <p class="font-bold text-3xl text-start">Pharmacy</p>
@@ -19,8 +19,8 @@
             <multiselect class="ml-8" v-model="group" :options="groupoptions" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Filter By Group.."></multiselect>
         </div>
         <div class="w-1/4 flex items-center justify-end pr-6">
-          <button @click="showprojectModal" class="bg-green-600 w-10 h-10 text-lg text-white rounded-full flex items-center justify-center
-          focus:bg-green-300
+          <button @click="showprojectModal" class="bg-indigo-800 w-10 h-10 text-lg text-white rounded-full flex items-center justify-center
+          focus:bg-indigo-500
           "><i class="fas fa-plus"></i></button>
         </div>
         </div>
@@ -43,7 +43,7 @@
                 <td class="py-2">{{item.group}}</td>
                 <td class="py-2">{{item.quntity}}</td>
                 <td class="py-2">{{item.category}}</td>
-                <td class="text-green-600">
+                <td class="text-indigo-800">
                     <i class="fas fa-pen"></i>
                     <i class="fas fa-trash mx-2"></i>
                 </td>

@@ -1,6 +1,6 @@
 <template>
     <div>
-    <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;background-color:#fafbfc">
+    <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
         <div class="px-4 flex flex-wrap mb-6">
             <div class="lg:w-1/4 w-full">
             <p class="font-bold text-3xl text-start">Tracker</p>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;background-color:#fafbfc">
+        <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
         <div class="px-4 flex flex-wrap mb-6">
             <div class="lg:w-1/4 w-full">
             <p class="font-bold text-3xl text-start">Blood Bank</p>
@@ -19,9 +19,11 @@
     </thead>
     <tbody>
         <tr v-for="(item,index) in groups" :key="index" class="border-b border-gray-600 hover:bg-gray-200">
+            <router-link :to="'/bloodgroup/'+item.title">
             <td class="py-2">{{item.title}}</td>
+            </router-link>
             <td>{{item.qunt}}</td>
-            <td @click="showEditModal(item,index)" class="text-green-600"><i class="fas fa-pen"></i></td>
+            <td @click="showEditModal(item,index)" class="text-indigo-800"><i class="fas fa-pen"></i></td>
         </tr>
     </tbody>
 </table>
@@ -34,7 +36,7 @@
             <input type="number"  min="0" placeholder="enter number of group" v-model.number="editData.qunt" class="border border-gray-300 leading-9 w-full px-2">
           </div>
               <div class="w-full my-4  flex justify-end">
-                <button type="submit"  class="w-1/3 bg-gray-300 mx-2 p-2 rounded" style="background: linear-gradient(90deg,#55c3b7 0,#5fd0a5 48%,#66da90 100%);color: white;">Save</button>
+                <button type="submit"  class="w-1/3 bg-gray-300 mx-2 p-2 rounded" style="background:linear-gradient(135deg, #5b247a 0%,#1bcedf 100%);color: white;">Save</button>
                 <button type="button" @click="close" class="w-1/3 border border-gray-400 mx-2 p-2 rounded hover:bg-red-600 hover:text-white">Close</button>
               </div>
           </form>
