@@ -1,16 +1,48 @@
 <template>
     <div>
-    <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
-    <div class="px-4 flex flex-wrap mb-6">
+    <div class="text-gray-600 bg-white w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
+        <div class="px-4 flex flex-wrap mb-6 justify-between items-center pt-3">
             <div class="lg:w-1/4 w-full">
-            <p class="font-bold text-3xl text-start">Projects</p>
+            <p class="text-gray-700 text-3xl text-start font-serif">Projects</p>
             </div>
+            <div class="lg:w-1/3 w-full">
+            <input type="text" class="bg-gray-200 text-black form-text-input w-full px-4 focus:outline-none focus:border-indigo-700 rounded-md" placeholder="Type here to search..." >
+            <a style="position: absolute;right: 24px; top: 30px; font-size: 16px;"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
     </div>
+    <div class="my-8 bg-white rounded-lg">
+        <div class="py-8 px-4">
+               <input type="text" v-model="search" placeholder="Search.."
+            class="inline-block appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-700">
+        </div>
+        <div class="py-4 px-8">
+          <table class="table-responsive-full sort-table  rounded-lg  bg-white lg:w-full">
+          <thead>
+              <tr class="border-0">
+                  <th class="py-2 text-left text-base font-normal font-semibold">Project title</th>
+                  <th class="py-2 text-left text-base font-normal font-semibold">Person</th>
+                  <th class="py-2 text-left text-base font-normal font-semibold">Category</th>
+                  <th class="py-2 text-left text-base font-normal font-semibold">Due by</th>
+                  <th class="py-2 text-left text-base font-normal font-semibold">Progress</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(worker,index) in workers" :key="index">
+              <td class="text-gray-800 py-6 px-2"  :class="`${worker.Progress}`"><p>{{worker.title}}</p></td>
+              <td class="text-gray-800 py-6"><p>{{worker.person}}</p></td>
+              <td class="text-gray-800 py-6"><p>{{worker.Category}}</p></td>
+              <td class="text-gray-800 py-6"><p>{{worker.Designation}}</p></td>
+              <td class="text-gray-800 py-6"><p class="rounded-md p-0.5 w-2/3 text-center">{{worker.Progress}}</p></td>
+            </tr>
+          </tbody>
+      </table>
+        </div>
     </div>
-    <div class="bg-gray-200 my-4 p-4 flex justify-between">
+    <div class="bg-white my-4 p-4 flex justify-between">
         <div class="w-1/4">
             <input type="text" v-model="search" placeholder="Search.."
-            class="inline-block appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-green-500" >
+            class="inline-block appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-700">
         </div>
         <div class="w-1/3 flex justify-center items-center">
         <p class="text-sm text-gray-600 mr-2" style="white-space: nowrap;">Filter By Status ...</p>
@@ -20,6 +52,7 @@
             <button @click="showprojectModal" class="rounded w-full leading-9" style="background:linear-gradient(135deg, #5b247a 0%,#1bcedf 100%);color: white;"><i class="fas fa-plus"></i>Add New</button>
         </div>
     </div>
+
     <div class="my-6">
         <table id="content-table3" class="table-responsive-full sort-table  rounded-lg shadow bg-white lg:w-full">
             <thead>
@@ -80,7 +113,6 @@
         </tbody>
         </table>
     </div>
-
         <ve-modal :show="show" @close="close" :width="500">
             <h4 class="modal-title">Add New Project </h4>
             <form @submit.prevent="addProject">
@@ -118,6 +150,13 @@ export default {
         { date: '28-08-2021', info: 'magnis dis parturient', status: 'canceled', price: '310' },
         { date: '28-06-2020', info: 'enim diam tristique', status: 'ongoing', price: '120' }
       ],
+      workers: [
+        { title: 'check add new project', person: 'Anna Sthesia', Category: 'Electronic', Designation: '#1456', Hour: '$300', Progress: 'Paid' },
+        { title: 'check add new project', person: 'Brock Lee', Category: 'Laptop', Designation: '#8965', Hour: '$1200', Progress: 'Shipped' },
+        { title: 'check add new project', person: 'Dan Druff', Category: 'Mobile', Designation: '#6325', Hour: '$600', Progress: 'Pending' },
+        { title: 'check add new project', person: 'Lynn Guini', Category: 'Bluetooth', Designation: '#4875', Hour: '$200', Progress: 'Stoped' },
+        { title: 'check add new project', person: 'Eric Shun', Category: 'Camera', Designation: '#8956', Hour: '$300', Progress: 'Paid' }
+      ],
       currency: '$',
       search: '',
       options: ['All', 'completed', 'ongoing', 'canceled'],
@@ -152,3 +191,17 @@ export default {
   }
 }
 </script>
+<style scoped>
+      .Paid{
+    border-left:3px solid  #28a745 !important;
+  }
+  .Pending{
+    border-left:3px solid #ffc107 !important;
+  }
+  .Stoped{
+   border-left:3px solid #dc3545 !important;
+  }
+  .Shipped{
+    border-left:3px solid  #007bff !important;
+  }
+</style>

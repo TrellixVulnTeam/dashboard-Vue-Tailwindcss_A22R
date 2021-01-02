@@ -3,6 +3,7 @@ import App from './App.vue'
 import './assets/styles/index.css'
 import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
+import ProgressBar from 'vuejs-progress-bar'
 
 import Terms from './views/Terms.vue'
 
@@ -17,6 +18,7 @@ import VEModal from './components/VEModal.vue'
 import router from './router'
 Vue.config.productionTip = false
 Vue.use(VueApexCharts)
+Vue.use(ProgressBar)
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyB3fwQqOVvo2Q8-2khB1i1McMxg-wqt-_U',
