@@ -1,18 +1,22 @@
 <template>
     <div>
-        <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
-        <div class="px-4 flex flex-wrap mb-6">
+    <div class="text-gray-600 bg-white w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
+        <div class="px-4 flex flex-wrap mb-6 justify-between items-center pt-3">
             <div class="lg:w-1/4 w-full">
-            <p class="font-bold text-3xl text-start">Blood Bank</p>
+            <p class="text-gray-700 text-3xl text-start font-serif">Blood Bank</p>
+            </div>
+            <div class="lg:w-1/3 w-full">
+            <input type="text" class="bg-gray-200 text-black form-text-input w-full px-4 focus:outline-none focus:border-indigo-700 rounded-md" placeholder="Type here to search..." >
+            <a style="position: absolute;right: 24px; top: 30px; font-size: 16px;"><i class="fas fa-search"></i></a>
             </div>
         </div>
-        </div>
+    </div>
 
     <div class="my-6">
 <table class="table-responsive-full sort-table  rounded-lg  bg-white lg:w-full">
     <thead>
         <tr class="border-b border-gray-600">
-            <th class="py-2 text-left text-base font-normal text-gray-600">Group</th>
+            <th class="py-2 text-left text-base font-normal text-gray-600 px-4">Group</th>
             <th class="py-2 text-left text-base font-normal text-gray-600">Quntity</th>
             <th class="py-2 text-left text-base font-normal text-gray-600">Actions</th>
     </tr>
@@ -20,7 +24,7 @@
     <tbody>
         <tr v-for="(item,index) in groups" :key="index" class="border-b border-gray-600 hover:bg-gray-200">
             <router-link :to="'/bloodgroup/'+item.title">
-            <td class="py-2">{{item.title}}</td>
+            <td class="py-2 px-4">{{item.title}}</td>
             </router-link>
             <td>{{item.qunt}}</td>
             <td @click="showEditModal(item,index)" class="text-indigo-800"><i class="fas fa-pen"></i></td>

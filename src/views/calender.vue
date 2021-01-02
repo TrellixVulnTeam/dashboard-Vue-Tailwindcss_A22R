@@ -1,39 +1,71 @@
 <template>
     <div>
-    <div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
+    <div class="text-gray-600 bg-white w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
     <div class="px-4 flex flex-wrap mb-6">
             <div class="lg:w-1/4 w-full">
-            <p class="font-bold text-3xl text-start">Calendernew</p>
+            <p class="text-gray-700 text-3xl text-start font-serif">Calender</p>
             </div>
     </div>
     </div>
-
-  <div class="text-center section my-4">
-    <p class="text-lg font-medium text-gray-600 mb-6">
-      Roll your own calendars
-    </p>
-    <vc-calendar
-      class="custom-calendar max-w-full"
-      :masks="masks"
-      :attributes="attributes"
-      disable-page-swipe
-      is-expanded
-    >
-      <template v-slot:day-content="{ day, attributes }">
-        <div class="flex flex-col h-full z-10 overflow-hidden">
-          <span class="day-label text-sm text-gray-900">{{ day.day }}</span>
-          <div class="flex-grow overflow-y-auto overflow-x-auto">
-            <p
-              v-for="attr in attributes" :key="attr.id"
-              class="text-xs leading-tight rounded-sm p-1 mt-0 mb-1"
-              :class="attr.customData.class">
-              {{ attr.customData.title }}
-            </p>
+    <div class="flex">
+      <div class="w-3/4 my-20">
+      <div class="w-4/5">
+        <vc-calendar :attributes="attributesingle"></vc-calendar>
+      </div>
+      <div class="bg-white rounded-xl p-4 w-4/5 mt-12">
+        <h2 class="text-gray-700 text-lg mb-4">Today's Schedule</h2>
+        <div>
+          <div class="flex my-2">
+            <span><i class="fas fa-dot-circle text-green-400"></i></span>
+            <div class="mx-4 text-gray-600">
+              <p>Web Design</p>
+              <p>09:00 to 12:00</p>
+            </div>
+          </div>
+          <div class="flex my-2">
+            <span><i class="fas fa-dot-circle text-blue-400"></i></span>
+            <div class="mx-4 text-gray-600">
+              <p>Web Design</p>
+              <p>09:00 to 12:00</p>
+            </div>
+          </div>
+          <div class="flex my-2">
+            <span><i class="fas fa-dot-circle text-yellow-400"></i></span>
+            <div class="mx-4 text-gray-600">
+              <p>Web Design</p>
+              <p>09:00 to 12:00</p>
+            </div>
           </div>
         </div>
-      </template>
-    </vc-calendar>
-  </div>
+      </div>
+      </div>
+        <div class="text-center section my-4 bg-white">
+          <p class="text-lg text-justify pt-4 pl-4 font-medium text-gray-600 mb-6">
+            Appointment
+          </p>
+          <vc-calendar
+            class="custom-calendar max-w-full"
+            :masks="masks"
+            :attributes="attributes"
+            disable-page-swipe
+            is-expanded
+          >
+            <template v-slot:day-content="{ day, attributes }">
+              <div class="flex flex-col h-full z-10 overflow-hidden">
+                <span class="day-label text-sm text-gray-900">{{ day.day }}</span>
+                <div class="flex-grow overflow-y-auto overflow-x-auto">
+                  <p
+                    v-for="attr in attributes" :key="attr.id"
+                    class="text-xs leading-tight rounded-sm p-1 mt-0 mb-1"
+                    :class="attr.customData.class">
+                    {{ attr.customData.title }}
+                  </p>
+                </div>
+              </div>
+            </template>
+          </vc-calendar>
+        </div>
+    </div>
     </div>
 </template>
 
@@ -43,6 +75,13 @@ export default {
     const month = new Date().getMonth()
     const year = new Date().getFullYear()
     return {
+      attributesingle: [
+        {
+          key: 'today',
+          highlight: true,
+          dates: new Date()
+        }
+      ],
       masks: {
         weekdays: 'WWW'
       },
@@ -185,5 +224,8 @@ export default {
     .flex-col{
         height: 80px !important;
         max-height: 80px !important;
+    }
+    .custom-calendar.vc-container{
+      border: 0px !important;
     }
 </style>

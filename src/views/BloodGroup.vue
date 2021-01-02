@@ -1,15 +1,17 @@
 <template>
 
 <div>
-
-<div class="text-gray-600 w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
-<div class="px-4 flex flex-wrap mb-6">
-    <div class="w-full">
-    <p class="font-bold text-3xl text-start">Blood Group {{group}} details</p>
+    <div class="text-gray-600 bg-white w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
+        <div class="px-4 flex flex-wrap mb-6 justify-between items-center pt-3">
+            <div class="lg:w-1/4 w-full">
+            <p class="text-gray-700 text-3xl text-start font-serif">Blood Group {{group}} details</p>
+            </div>
+            <div class="lg:w-1/3 w-full">
+            <input type="text" class="bg-gray-200 text-black form-text-input w-full px-4 focus:outline-none focus:border-indigo-700 rounded-md" placeholder="Type here to search..." >
+            <a style="position: absolute;right: 24px; top: 30px; font-size: 16px;"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
     </div>
-</div>
-</div>
-
 <div class="bg-gray-200 my-4 p-4 flex justify-between">
 <div class="w-1/4">
     <input type="text" v-model="search" placeholder="Search.."
