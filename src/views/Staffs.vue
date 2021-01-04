@@ -13,6 +13,7 @@
             </div>
         </div>
     </div>
+    <div class="mx-10 px-8">
     <div class="bg-white my-4 p-4 flex justify-between">
         <div class="w-1/4">
             <input type="text" v-model="search" placeholder="Search.."
@@ -38,6 +39,7 @@
                     </div>
                 </div>
         </div>
+    </div>
     </div>
     </div>
 </template>

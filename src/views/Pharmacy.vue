@@ -11,6 +11,66 @@
             </div>
         </div>
         </div>
+        <div class="mx-10 px-8">
+        <div class="bg-white rounded-lg my-8 p-4">
+            <div class="p-6"><p class="text-lg text-gray-700">Latest Project</p></div>
+            <div class="p-4">
+            <table id="content-table3" class="table-responsive-full sort-table  rounded-lg  bg-white lg:w-full">
+            <thead>
+                <tr class="bg-gray-200 text-gray-700">
+                    <th class="p-4">
+                    <div class="flex justify-between items-center">
+                        <p class="mr-2 text-base">Order ID</p>
+                    </div>
+                    </th>
+                    <th class= "p-4">
+                    <div class="flex justify-between items-center">
+                        <p class="mr-2 text-base">Billing Name</p>
+                    </div>
+                    </th>
+                    <th class="p-4">
+                    <div class="flex justify-between items-center">
+                        <p class="mr-2 text-base">Date</p>
+                    </div>
+                    </th>
+                    <th class="p-4">
+                    <div class="flex justify-between items-center">
+                        <p class="mr-2 text-base">Total</p>
+                    </div>
+                    </th>
+                    <th class="p-4">
+                    <div class="flex justify-between items-center">
+                        <p class="mr-2 text-base">Payment Status</p>
+                    </div>
+                    </th>
+                    <th class="p-4">
+                    <div class="flex justify-between items-center">
+                        <p class="mr-2 text-base">Payment Method</p>
+                    </div>
+                    </th>
+                    <th class="p-4">
+                    <div class="flex justify-between items-center">
+                        <p class="mr-2 text-base">View Details</p>
+                    </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-gray-200 text-center" v-for="(order,index) in orders" :key="index">
+                <td class="text-gray-800 py-3 px-2" ><p>{{order.ID}}</p></td>
+                <td class="text-gray-800 py-3 px-2" ><p>{{order.Name}}</p></td>
+                <td class="text-gray-800 py-3 px-2" ><p>{{order.Date}}</p></td>
+                <td class="text-gray-800 py-3 px-2" ><p>{{order.Total}}</p></td>
+                <td class="text-gray-800 py-3 px-2" ><span :class="`${order.Status} rounded-lg px-1`">{{order.Status}}</span></td>
+                <td class="text-gray-800 py-3 px-2" ><p><span class="px-1"><i :class="`fab ${order.Statusimg}`"></i></span>{{order.Method}}</p></td>
+                <td class="text-gray-800 py-3 px-2" >
+                  <button type="button" class="rounded-lg bg-indigo-600 text-white text-xs px-1 focus:outline-none">View More</button>
+                </td>
+              </tr>
+            </tbody>
+            </table>
+            </div>
+        </div>
         <div class="bg-white my-4 p-4 flex justify-between">
         <div class="w-1/4">
             <input type="text" v-model="search" placeholder="Search.."
@@ -82,6 +142,7 @@
           </form>
     </ve-modal>
     </div>
+    </div>
 </template>
 <script>
 export default {
@@ -96,6 +157,14 @@ export default {
         { name: 'versions', company: 'Letraset', group: 'group2', quntity: 5, category: 'scrambled' },
         { name: 'standard', company: 'Letraset', group: 'group1', quntity: 5, category: 'necessary' },
         { name: 'necessary', company: 'Letraset ', group: 'group2', quntity: 5, category: 'category2' }
+      ],
+      orders: [
+        { ID: '#SK2540', Name: 'Neal Matthews', Date: '07 Oct, 2019', Total: '$400', Status: 'Paid', Method: 'Mastercard', Statusimg: 'fa-cc-mastercard' },
+        { ID: '#SK2541', Name: 'Jamal Burnett', Date: '06 Oct, 2019', Total: '$380', Status: 'Chargeback', Method: 'Visa', Statusimg: 'fa-cc-visa' },
+        { ID: '#SK2542', Name: 'Barry Dick', Date: '05 Oct, 2019', Total: '$$384', Status: 'Paid', Method: 'Paypal', Statusimg: 'fa-cc-paypal' },
+        { ID: '#SK2543', Name: 'Ronald Taylor', Date: '04 Oct, 2019', Total: '$412', Status: 'Paid', Method: 'Mastercard', Statusimg: 'fa-cc-mastercard' },
+        { ID: '#SK2544', Name: 'Juan Mitchell', Date: '09 Oct, 2019', Total: '$404', Status: 'Refund', Method: 'Visa', Statusimg: 'fa-cc-visa' },
+        { ID: '#SK2545', Name: 'Jacob Hunter', Date: '12 Oct, 2019', Total: '$392', Status: 'Paid', Method: 'Paypal', Statusimg: 'fa-cc-paypal' }
       ],
       categoryoptions: ['All', 'scrambled', 'category2', 'necessary', 'versions'],
       groupoptions: ['All', 'group1', 'group2', 'group3'],
@@ -128,3 +197,17 @@ export default {
   }
 }
 </script>
+<style scoped>
+.Paid{
+  color: #34c38f;
+  background-color: rgba(52,195,143,.18);
+}
+.Chargeback{
+  color: #f46a6a;
+  background-color: rgba(244,106,106,.18);
+}
+.Refund{
+color: #f1b44c;
+background-color: rgba(241,180,76,.18);
+}
+</style>

@@ -11,10 +11,11 @@
             </div>
         </div>
     </div>
+    <div class="mx-10 px-8">
     <div class="my-8 bg-white rounded-lg">
         <div class="py-8 px-4">
                <input type="text" v-model="search" placeholder="Search.."
-            class="inline-block appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-700">
+            class="bg-gray-200 form-text-input inline-block appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-700">
         </div>
         <div class="py-4 px-8">
           <table class="table-responsive-full sort-table  rounded-lg  bg-white lg:w-full">
@@ -33,7 +34,7 @@
               <td class="text-gray-800 py-6"><p>{{worker.person}}</p></td>
               <td class="text-gray-800 py-6"><p>{{worker.Category}}</p></td>
               <td class="text-gray-800 py-6"><p>{{worker.Designation}}</p></td>
-              <td class="text-gray-800 py-6"><p class="rounded-md p-0.5 w-2/3 text-center">{{worker.Progress}}</p></td>
+              <td class="text-gray-800 py-6 bg"><span :class="`rounded-md px-1 text-sm text-center bg bgspan ${worker.Progress}`">{{worker.Progress}}</span></td>
             </tr>
           </tbody>
       </table>
@@ -137,6 +138,7 @@
                 </form>
         </ve-modal>
     </div>
+    </div>
 </template>
 <script>
 export default {
@@ -203,5 +205,25 @@ export default {
   }
   .Shipped{
     border-left:3px solid  #007bff !important;
+  }
+  .bg.Paid{
+  color: #34c38f !important;
+  background-color: rgba(52,195,143,.18) !important;
+  border:0 !important;
+  }
+  .bg.Pending{
+  color: #f1b44c !important;
+  background-color: rgba(241,180,76,.18) !important;
+  border:0 !important;
+  }
+  .bg.Shipped{
+  background: #7aade3c9;
+  color: #007bff;
+  border: 0px !important;
+  }
+  .bg.Stoped{
+  color: #f46a6a !important;
+  background-color: rgba(244,106,106,.18)!important;
+  border:0 !important;
   }
 </style>

@@ -11,8 +11,9 @@
             </div>
         </div>
     </div>
-    <div class="my-6 flex">
-      <div class="bg-white w-2/3 mx-3 rounded-lg">
+    <div class="mx-10 px-8">
+    <div class="my-6 grid grid-cols-3 gap-4">
+      <div class="bg-white  col-span-2 rounded-lg">
           <div class="my-8 bg-white rounded-lg">
         <div class="px-4"><p class="text-xl text-gray-700">Frequent Post List</p></div>
         <div class="py-4 px-8 mt-4">
@@ -46,7 +47,7 @@
     </div>
 
       </div>
-      <div class="bg-white w-1/3 mx-3 h-full rounded-lg">
+      <div class="bg-white h-full rounded-lg">
         <div class="my-8 bg-white rounded-lg">
         <div class="px-4"><p class="text-xl text-gray-700">Post Summary</p></div>
         <div class="mt-8 px-4"><p class="text-sm text-gray-600">List Of statistics</p></div>
@@ -94,6 +95,7 @@
       </gmap-info-window>
 
     </GmapMap>
+    </div>
     </div>
     </div>
 </template>

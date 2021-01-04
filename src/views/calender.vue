@@ -7,6 +7,7 @@
             </div>
     </div>
     </div>
+    <div class="mx-10 px-8">
     <div class="flex">
       <div class="w-3/4 my-20">
       <div class="w-4/5">
@@ -65,6 +66,7 @@
             </template>
           </vc-calendar>
         </div>
+    </div>
     </div>
     </div>
 </template>
