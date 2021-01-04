@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-
+    <div class="mx-10 px-8">
     <div class="my-6">
 <table class="table-responsive-full sort-table  rounded-lg  bg-white lg:w-full">
     <thead>
@@ -46,6 +46,7 @@
           </form>
         </div>
       </ve-modal>
+    </div>
     </div>
 </template>
 <script>

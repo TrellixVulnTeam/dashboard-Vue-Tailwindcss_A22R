@@ -79,7 +79,7 @@
         </header>
 
 <div  v-bind:class="{ show2 : showlink}" class="xl:w-11/12 h-screen overflow-y-auto relative w-full bg-gray-200">
-<div class="relative lg:mx-12 my-1 px-12" style="min-height: 100vh;">
+<div class="relative" style="min-height: 100vh;">
 <div   style=" padding-bottom: 4rem;"  class="relative">
 <!-- <div :class="tab_visible('Terms')">
 <Terms></Terms>
