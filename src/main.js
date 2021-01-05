@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import ProgressBar from 'vuejs-progress-bar'
 
-import Terms from './views/Terms.vue'
+// import Terms from './views/Terms.vue'
 
 import * as VueGoogleMaps from 'vue2-google-maps'
 
@@ -37,7 +37,7 @@ Vue.component('multiselect', Multiselect)
 Vue.component('ve-modal', VEModal)
 Vue.component('animated-number', AnimatedNumber)
 
-Vue.component('Terms', Terms)
+// Vue.component('Terms', Terms)
 
 new Vue({
   router,

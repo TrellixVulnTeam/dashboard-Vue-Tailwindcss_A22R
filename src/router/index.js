@@ -1,28 +1,28 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import dashboard from '../views/Dashboard.vue'
-import project from '../views/Project.vue'
-import terms from '../views/Terms.vue'
-import staffs from '../views/Staffs.vue'
-import stations from '../views/stations.vue'
-import calender from '../views/calender.vue'
-import pharmacy from '../views/Pharmacy.vue'
-import Appoinement from '../views/Appointment.vue'
-import BloodGroup from '../views/BloodGroup.vue'
-import GoldenCalculator from '../views/GoldenCalculator.vue'
-import Level from '../views/Level.vue'
+import Dashboard from '@/components/base/Dashboard.vue'
+import Project from '@/components/base/Project.vue'
+import Terms from '@/components/base/Terms.vue'
+import Staffs from '@/components/base/Staffs.vue'
+import Stations from '@/components/base/Stations.vue'
+import Calender from '@/components/base/Calender.vue'
+import Product from '@/components/base/Product.vue'
+import Appoinement from '@/components/base/Appointment.vue'
+import BloodGroup from '@/components/base/BloodGroup.vue'
+import GoldenCalculator from '@/components/base/GoldenCalculator.vue'
+import Level from '@/components/base/Level.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', name: 'dashboard', component: dashboard },
+  { path: '/', name: 'dashboard', component: Dashboard },
   { path: '/dashboard', name: 'Level', component: Level },
-  { path: '/project', name: 'project', component: project },
-  { path: '/terms', name: 'terms', component: terms },
-  { path: '/staffs', name: 'staffs', component: staffs },
-  { path: '/stations', name: 'stations', component: stations },
-  { path: '/calender', name: 'calender', component: calender },
-  { path: '/pharmacy', name: 'pharmacy', component: pharmacy },
+  { path: '/project', name: 'project', component: Project },
+  { path: '/terms', name: 'terms', component: Terms },
+  { path: '/staffs', name: 'staffs', component: Staffs },
+  { path: '/stations', name: 'stations', component: Stations },
+  { path: '/calender', name: 'Calender', component: Calender },
+  { path: '/product', name: 'product', component: Product },
   { path: '/appointment', name: 'appoinement', component: Appoinement },
   { path: '/bloodgroup/:group', name: 'BloodGroup', component: BloodGroup, props: true },
   { path: '/GoldenCalculator', name: 'GoldenCalculator', component: GoldenCalculator }

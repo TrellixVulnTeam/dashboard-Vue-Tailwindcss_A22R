@@ -32,7 +32,7 @@
                         <router-link to="/terms"  class="my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
                             <i class="fab fa-amazon-pay"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
-                            Terms
+                            Invoice
                             </a>
                         </router-link>
                         <router-link to="/staffs" class="  my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
@@ -53,7 +53,7 @@
                             Calender
                             </a>
                         </router-link>
-                        <router-link to="/pharmacy" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
+                        <router-link to="/product" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
                            <i class="fas fa-pager"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Product
@@ -78,7 +78,7 @@
             </div>
         </header>
 
-<div  v-bind:class="{ show2 : showlink}" class="xl:w-11/12 h-screen overflow-y-auto relative w-full bg-gray-200">
+<div  v-bind:class="{ show2 : showlink}" class="xl:w-11/12 h-screen overflow-y-auto relative w-full bg-gray-100">
 <div class="relative" style="min-height: 100vh;">
 <div   style=" padding-bottom: 4rem;"  class="relative">
 <!-- <div :class="tab_visible('Terms')">
