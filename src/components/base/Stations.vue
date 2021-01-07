@@ -1,16 +1,5 @@
 <template>
     <div>
-      <div class="text-gray-600 bg-white w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
-          <div class="px-4 flex flex-wrap mb-6 justify-between items-center pt-3">
-            <div class="lg:w-1/4 w-full">
-            <p class="text-gray-700 text-3xl text-start font-serif">Stations</p>
-            </div>
-            <div class="lg:w-1/3 w-full">
-            <input type="text" class="bg-gray-200 text-black form-text-input w-full px-4 focus:outline-none focus:border-indigo-700 rounded-md" placeholder="Type here to search..." >
-            <a style="position: absolute;right: 24px; top: 30px; font-size: 16px;"><i class="fas fa-search"></i></a>
-            </div>
-        </div>
-    </div>
     <div class="mx-10 px-8">
     <div class="my-6 grid grid-cols-3 gap-4">
       <div class="bg-white  col-span-2 rounded-lg">
@@ -36,8 +25,8 @@
               <td class="text-gray-800 py-2 px-2 text-center"><P :class="`${post.Status} rounded-md text-white text-sm`">{{post.Status}}</P></td>
               <td class="text-gray-800 py-2 px-2 text-center"><P>{{post.Location}}</P></td>
               <td class="text-gray-800 py-2 px-2 text-center">
-                <div class="iq-progress-bar">
-                  <span :class="`${post.Status}`" :style="{'width': post.Progress+ '%'}" style="transition: width 2s ease 0s;"></span>
+                <div class="iq-progress-bar" style="transition: width 2s ease 0s;">
+                  <span :class="`${post.Status}`" :style="{'width': post.Progress+ '%'}"></span>
                 </div>
               </td>
             </tr>
@@ -189,8 +178,9 @@ export default {
     background: #827af3 none repeat scroll 0 0;
     display: block;
     height: 100%;
-    width: 0;
+    width: 0px;
     border-radius: 4px;
+    transition: width 2s;
 }
 .Moving{
     background-color: #28a745!important;

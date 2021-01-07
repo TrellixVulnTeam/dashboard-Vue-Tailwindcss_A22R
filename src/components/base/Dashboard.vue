@@ -1,16 +1,5 @@
 <template>
     <div>
-     <div class="text-gray-600 bg-white w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
-        <div class="px-4 flex flex-wrap mb-6 justify-between items-center pt-3">
-            <div class="lg:w-1/4 w-full">
-            <p class="text-gray-700 text-3xl text-start font-serif">Tracker</p>
-            </div>
-            <div class="lg:w-1/3 w-full">
-            <input type="text" class="bg-gray-200 text-black form-text-input w-full px-4 focus:outline-none focus:border-indigo-700 rounded-md" placeholder="Type here to search..." >
-            <a style="position: absolute;right: 24px; top: 30px; font-size: 16px;"><i class="fas fa-search"></i></a>
-            </div>
-        </div>
-    </div>
     <div class="mx-10 px-8">
     <div class="grid grid-cols-4 gap-4 mt-6 mb-12">
       <div class="px-4 rounded-md bg-white shadow-md border-b-2 border-yellow-500">
@@ -87,18 +76,16 @@
       </div>
     </div>
     <div class="charts my-8 grid grid-cols-2 gap-4">
-            <div class="bg-gray-100 shadow-lg rounded-xl p-2">
-                <div>
-                    <apexchart height="300" type="donut" :options="options" :series="series"></apexchart>
-                </div>
+            <div class="bg-white shadow-lg rounded-xl p-2">
+                <apexchart height="300" type="donut" :options="options" :series="series"></apexchart>
             </div>
-            <div class="bg-gray-100 shadow-lg rounded-xl p-2">
+            <div class="bg-white shadow-lg rounded-xl p-2">
                 <apexchart  height="300" type="line" :options="options" :series="series2"></apexchart>
             </div>
-            <div class="bg-gray-100 shadow-lg rounded-xl p-2">
+            <div class="bg-white shadow-lg rounded-xl p-2">
                 <apexchart height="300" type="bar" :options="optionsbar" :series="seriesbar"></apexchart>
             </div>
-            <div class="bg-gray-100 shadow-lg rounded-xl p-2">
+            <div class="bg-white shadow-lg rounded-xl p-2">
                 <apexchart type="area"  height="300" :options="chartOptions" :series="seriesarea"></apexchart>
             </div>
     </div>

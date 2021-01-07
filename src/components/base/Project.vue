@@ -1,77 +1,25 @@
 <template>
     <div>
-    <div class="text-gray-600 bg-white w-full shadow py-1 h-20" style="position: sticky;">
-        <div class="px-4 flex flex-wrap mb-6 justify-between items-center pt-3">
-            <div class="lg:w-1/3 w-full">
-            <input type="text" class="bg-gray-200 text-black leading-10 w-full px-4 focus:outline-none focus:border-indigo-700 rounded-full" placeholder="Type here to search..." >
-            <a style="position: absolute;top: 24px;left: 343px; font-size: 16px;"><i class="fas fa-search"></i></a>
-            </div>
-            <div>
-              <div class="icon flex justify-between items-center">
-                <div class="mx-6 w-4 h-4 animate-bounce delay-700">
-                  <span class=""><img src="@/assets/icon/bell.svg" alt=""></span>
-                  <span class="animate-pulse" style="background: red;
-    height: 5px;
-    width: 5px;
-    font-size: 0;
-    text-align: center;
-    padding: 0;
-    position: absolute;
-    top: -8px;
-    right: 2px;
-    animation: shadow-pulse-dots 1s infinite;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;"></span>
-                </div>
-                <div class="mx-6 w-4 h-4 animate-bounce delay-500">
-                  <span class=""><img src="@/assets/icon/email.svg" alt=""></span>
-                  <span class="animate-pulse" style="background: #827af3;
-    height: 5px;
-    width: 5px;
-    font-size: 0;
-    text-align: center;
-    padding: 0;
-    position: absolute;
-    top: -8px;
-    right: 2px;
-    animation: shadow-pulse-dots 1s infinite;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;"></span>
-                </div>
-                <div class="profile flex justify-center items-center">
-                  <div class="w-10 h-10"><img class="rounded-full" src="@/assets/images/avataruser.jpg"></div>
-                  <div class="ml-1">
-                    <span>Rock lai</span>
-                    <span class="ml-1 text-xs"><i class="fas fa-chevron-down"></i></span>
-                  </div>
-                </div>
-                <div class="mx-6 w-5 h-5 animate-spin delay-300">
-                  <span class=""><img src="@/assets/icon/settings.svg" alt=""></span>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-
     <div class="mx-10 px-8">
     <div class="my-8 project-card">
+      <div class="my-6"><p class="text-gray-700 font-semibold text-xl">Project Card</p></div>
       <div class="grid grid-cols-3 gap-4">
         <div class="bg-white rounded-md pb-2 pt-8 px-2" v-for="(card,index) in cards" :key="index">
           <div class="content mb-4 px-4">
             <div class="flex">
-              <div class="avatar bg-gray-100 rounded-full w-12 h-12 mr-4 flex justify-center items-center"><img class="rounded-full w-6 h-6" src="@/assets/icon/img-2.f8cbf798.png"></div>
+              <div class="avatar bg-gray-100 rounded-full w-12 h-12 mr-4 flex justify-center items-center"><img class="rounded-full w-6 h-6" :src="card.icon"></div>
               <div class="body w-2/3">
                 <p class="text-gray-800">{{card.name}}</p>
                 <p class="text-gray-600 mb-3">{{card.description}}</p>
                 <div class="team flex items-center">
-               <a class="avatar w-10 h-10 mr-2"><img class="rounded-full" src="@/assets/images/avataruser.jpg"></a>
-                <a class="avatar w-10 h-10 mr-2"><img class="rounded-full" src="@/assets/images/avataruser.jpg"></a>
+               <a class="avatar w-10 h-10 mr-2"><img class="rounded-full" src="@/assets/staff/07.jpg"></a>
+                <a class="avatar w-10 h-10 mr-2"><img class="rounded-full" src="@/assets/staff/06.jpg"></a>
               </div>
               </div>
             </div>
           </div>
           <div class="border-t px-4 py-2 flex items-center text-xs">
-              <div class="bg-blue-700 text-white rounded-md px-1 mr-1">{{card.status}}</div>
+              <span :class="`text-white rounded-md px-1 mr-1 ${card.status}`">{{card.status}}</span>
               <span class="text-gray-700 mr-1"><i class="far fa-calendar-alt"></i>{{card.date}}</span>
               <span class="text-gray-700"><i class="far fa-comment-alt"></i> {{card.comments}}</span>
           </div>
@@ -226,17 +174,17 @@ export default {
         { title: 'check add new project', person: 'Eric Shun', Category: 'Camera', Designation: '#8956', Hour: '$300', Progress: 'Paid' }
       ],
       cards: [
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Completed', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Pending', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Delay', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Completed', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Delay', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Completed', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Pending', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Completed', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Delay', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Delay', date: '15 Oct, 19', comments: 214 },
-        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Pending', date: '15 Oct, 19', comments: 214 }
+        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Completed', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-1.png') },
+        { name: 'Brand logo design', description: 'Assigned to Mark simple', status: 'RePending', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-2.png') },
+        { name: 'New Landing UI', description: 'Skote Saas Dashboard Assigned', status: 'Delay', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-4.png') },
+        { name: 'New admin Design', description: 'It will be as simple as Occidental', status: 'Completed', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-5.png') },
+        { name: 'New Landing UI', description: 'Skote Saas Dashboard Occidental', status: 'Delay', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-6.png') },
+        { name: 'Blog Template UI', description: 'It will be as simple as Occidental', status: 'Completed', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-6.png') },
+        { name: 'New admin Design', description: 'Next meeting tom meetingor row Delay', status: 'RePending', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-5.png') },
+        { name: 'Blog Template UI', description: 'Assigned to Mar meetingk', status: 'Completed', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-4.png') },
+        { name: 'Skote Saas Dashboard', description: 'It will be as simple as Occidental', status: 'Delay', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-2.png') },
+        { name: 'Brand logo design', description: 'Next meeting tomorrow meeting', status: 'Delay', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-1.png') },
+        { name: 'New admin Design', description: 'Skote Saas Next Dashboard Next', status: 'RePending', date: '15 Oct, 19', comments: 214, icon: require('@/assets/projectcard/img-5.png') }
       ],
       currency: '$',
       search: '',
@@ -306,6 +254,12 @@ export default {
   border:0 !important;
   }
   .Completed{
-
+      background-color: #556ee6;
+  }
+  .RePending{
+      background-color: #f1b44c;
+  }
+  .Delay{
+      background-color: #f46a6a;
   }
 </style>

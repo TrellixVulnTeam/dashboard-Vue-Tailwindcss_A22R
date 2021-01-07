@@ -119,7 +119,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .w-50{
 width:50% !important;
 }

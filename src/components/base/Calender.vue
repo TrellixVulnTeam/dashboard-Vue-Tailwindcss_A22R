@@ -1,12 +1,5 @@
 <template>
     <div>
-    <div class="text-gray-600 bg-white w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
-    <div class="px-4 flex flex-wrap mb-6">
-            <div class="lg:w-1/4 w-full">
-            <p class="text-gray-700 text-3xl text-start font-serif">Calender</p>
-            </div>
-    </div>
-    </div>
     <div class="mx-10 px-8">
     <div class="flex">
       <div class="w-3/4 my-20">
@@ -219,7 +212,7 @@ export default {
   }
 }
 </style>
-<style>
+<style scoped>
     .vc-grid-cell{
         border: 1px solid #80808017;
     }

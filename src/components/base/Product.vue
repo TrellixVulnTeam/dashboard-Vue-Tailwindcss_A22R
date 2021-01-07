@@ -1,16 +1,5 @@
 <template>
     <div>
-        <div class="text-gray-600 bg-white w-full shadow py-2 my-1 rounded-b-lg" style="position: sticky;">
-        <div class="px-4 flex flex-wrap mb-6 justify-between items-center pt-3">
-            <div class="lg:w-1/4 w-full">
-            <p class="text-gray-700 text-3xl text-start font-serif">Product</p>
-            </div>
-            <div class="lg:w-1/3 w-full">
-            <input type="text" class="bg-gray-200 text-black form-text-input w-full px-4 focus:outline-none focus:border-indigo-700 rounded-md" placeholder="Type here to search..." >
-            <a style="position: absolute;right: 24px; top: 30px; font-size: 16px;"><i class="fas fa-search"></i></a>
-            </div>
-        </div>
-        </div>
         <div class="mx-10 px-8">
         <div class="bg-white rounded-lg my-8 p-4">
             <div class="p-6"><p class="text-lg text-gray-700">Latest Project</p></div>
