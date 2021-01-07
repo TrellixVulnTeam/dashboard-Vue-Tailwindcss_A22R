@@ -15,6 +15,7 @@ import VCalendar from 'v-calendar'
 import AnimatedNumber from 'animated-number-vue'
 
 import VEModal from './components/share/VEModal.vue'
+import Navbar from './components/share/Navbar.vue'
 
 import router from './router'
 Vue.config.productionTip = false
@@ -35,6 +36,7 @@ Vue.use(VCalendar, {
 Vue.component('apexchart', VueApexCharts)
 Vue.component('multiselect', Multiselect)
 Vue.component('ve-modal', VEModal)
+Vue.component('Navbar', Navbar)
 Vue.component('animated-number', AnimatedNumber)
 
 // Vue.component('Terms', Terms)

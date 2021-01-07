@@ -18,7 +18,7 @@
                             </a>
                         </router-link>
                         <router-link to="/dashboard" class=" my-1   hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200" aria-hidden="true">
-                            <i class="fas fa-hotel"></i>
+                            <i class="fas fa-home"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Dashboard
                             </a>
@@ -81,6 +81,7 @@
 <div  v-bind:class="{ show2 : showlink}" class="xl:w-11/12 h-screen overflow-y-auto relative w-full bg-gray-100">
 <div class="relative" style="min-height: 100vh;">
 <div   style=" padding-bottom: 4rem;"  class="relative">
+<Navbar/>
 <!-- <div :class="tab_visible('Terms')">
 <Terms></Terms>
 </div> -->
