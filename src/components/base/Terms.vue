@@ -2,13 +2,13 @@
     <div>
     <div class="mx-10 px-8">
     <div class="grid grid-cols-3 gap-4 my-8">
-        <div class="col-span-2 bg-white rounded-lg p-4">
+        <div class="col-span-2 bg-white rounded-xl shadow p-4">
         <div class="p-2"><p class="text-gray-800 text-xl">Invoice Stats</p></div>
         <div class="chart">
           <apexchart height="340"  :options="options" :series="series"></apexchart>
         </div>
         </div>
-        <div class="grid grid-cols-1 gap-4 bg-white p-4 rounded-lg divide-y divide-indigo-100">
+        <div class="grid grid-cols-1 gap-4 bg-white p-4 rounded-xl shadow divide-y divide-indigo-100">
         <div class="p-4"  v-for="(invoice,index) in invoices" :key="index">
           <div class="flex items-center">
             <div :class="`icon flex justify-center items-center  rounded-lg  w-12 h-12 bg ${invoice.status}`">
@@ -17,7 +17,14 @@
             <div class="ml-8 w-2/3">
               <div class="flex items-center justify-between">
                 <span class="text-gray-800">{{invoice.name}}</span>
-                <div><p :class="`font-semibold text-indigo-600 ${invoice.status}`">{{invoice.price}}$</p></div>
+                <div><p :class="`font-semibold text-indigo-600 ${invoice.status}`">
+                    <animated-number
+                    easing="linear"
+                    :value="invoice.price"
+                    :formatValue="formatToPrice"
+                    :duration="4000"
+                    />
+                  </p></div>
               </div>
               <span class="text-sm text-gray-500">{{invoice.Transaction}} Transaction </span>
               <div class="w-full inline-flex">
@@ -176,6 +183,9 @@ export default {
     }
   },
   methods: {
+    formatToPrice (value) {
+      return `${Number(value).toFixed(0)}$`
+    },
     showEditModal (item, index) {
       this.editData.title = item.title
       this.show = true
@@ -195,15 +205,25 @@ export default {
   }
 }
 </script>
+<style>
+.apexcharts-text .apexcharts-yaxis-title-text,
+#SvgjsText1084,.apexcharts-yaxis-title ,#SvgjsText1109{
+  font-family: monospace !important;
+  font-size:18px !important;
+}
+#SvgjsText1244{
+  font-size:20px !important;
+}
+/* .apexcharts-text, .apexcharts-yaxis-title-text
+,#SvgjsText1234{
+  font-size: 22px !important;
+  font-family: monospace !important;
+} */
+</style>
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 .chart {
   font-family: Roboto, sans-serif;
-}
-.apexcharts-text .apexcharts-yaxis-title-text,
-#SvgjsText1084,.apexcharts-yaxis-title ,#SvgjsText1109{
-  font-family: Roboto, sans-serif !important;
-  font-size:16px !important;
 }
 .iq-progress-bar {
     background: #eef1f7;

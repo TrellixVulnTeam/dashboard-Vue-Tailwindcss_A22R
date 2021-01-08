@@ -2,7 +2,9 @@
     <div>
         <div class="mx-10 px-8">
         <div class="bg-white rounded-lg my-8 p-4">
-            <div class="p-6"><p class="text-lg text-gray-700">Latest Project</p></div>
+            <div class="my-8">
+              <p class="text-gray-800 text-lg font-semibold">Latest Project</p>
+            </div>
             <div class="p-4">
             <table id="content-table3" class="table-responsive-full sort-table  rounded-lg  bg-white lg:w-full">
             <thead>

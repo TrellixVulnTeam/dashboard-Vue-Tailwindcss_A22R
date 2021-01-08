@@ -106,7 +106,7 @@
           <tbody>
             <tr v-for="(worker,index) in workers" :key="index">
               <td>
-                <div class="w-12 h-12 py-6 flex items-center"><img class="w-full rounded-full" src="@/assets/staff/avataruser.jpg"></div>
+                <div class="w-12 h-12 py-6 flex items-center"><img class="w-full rounded-full" :src="worker.avatar"></div>
               </td>
               <td class="text-gray-800 py-6"><p>{{worker.name}}</p></td>
               <td class="text-gray-800 py-6"><p>{{worker.Category}}</p></td>
@@ -127,11 +127,11 @@ export default {
   data () {
     return {
       workers: [
-        { name: 'Anna Sthesia', Category: 'Electronic', Designation: '#1456', Hour: '$300', Progress: 'Paid' },
-        { name: 'Brock Lee', Category: 'Laptop', Designation: '#8965', Hour: '$1200', Progress: 'Shipped' },
-        { name: 'Dan Druff', Category: 'Mobile', Designation: '#6325', Hour: '$600', Progress: 'Pending' },
-        { name: 'Lynn Guini', Category: 'Bluetooth', Designation: '#4875', Hour: '$200', Progress: 'Stoped' },
-        { name: 'Eric Shun', Category: 'Camera', Designation: '#8956', Hour: '$300', Progress: 'Paid' }
+        { name: 'Anna Sthesia', Category: 'Electronic', Designation: '#1456', Hour: '$300', Progress: 'Paid', percent: '38', avatar: require('@/assets/staff/06.jpg') },
+        { name: 'Brock Lee', Category: 'Laptop', Designation: '#8965', Hour: '$1200', Progress: 'Shipped', avatar: require('@/assets/staff/07.jpg') },
+        { name: 'Dan Druff', Category: 'Mobile', Designation: '#6325', Hour: '$600', Progress: 'Pending', avatar: require('@/assets/staff/08.jpg') },
+        { name: 'Lynn Guini', Category: 'Bluetooth', Designation: '#4875', Hour: '$200', Progress: 'Stoped', avatar: require('@/assets/staff/09.jpg') },
+        { name: 'Eric Shun', Category: 'Camera', Designation: '#8956', Hour: '$300', Progress: 'Paid', avatar: require('@/assets/staff/08.jpg') }
       ],
       options: {},
       series: [44, 55, 41, 17, 15],
