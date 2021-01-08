@@ -54,7 +54,7 @@
       </div>
       </div>
     </div>
-    <div class="maps my-8">
+<!--     <div class="maps my-8">
 <GmapMap
     :center="{lat:currentlocation.lat, lng:currentlocation.lng}"
     :zoom="8"
@@ -84,13 +84,13 @@
       </gmap-info-window>
 
     </GmapMap>
-    </div>
+    </div> -->
     </div>
     </div>
 </template>
 <script>
-import { gmapApi } from 'vue2-google-maps'
-export default {
+/* import { gmapApi } from 'vue2-google-maps'
+ */export default {
   name: 'stations',
   data () {
     return {
@@ -109,62 +109,62 @@ export default {
         { title: 'Repost', number: 864 },
         { title: 'Views', number: 2864 },
         { title: 'Posts', number: 864 }
-      ],
-      stations: [
+      ]
+      /*    stations: [
         { name: 'station1', lat: 31.506432, lng: 34.239167999999995 },
         { name: 'station2', lat: 31.606432, lng: 34.939167999999995 },
         { name: 'station3', lat: 31.906432, lng: 34.0039167999999995 },
         { name: 'station4', lat: 31.006432, lng: 34.119167999999995 }
-      ],
-      currentlocation: { lat: 0, lng: 0 },
+      ], */
+    /*   currentlocation: { lat: 0, lng: 0 },
       infoWindowOptions: {
         pixelOffset: {
           width: 0,
           height: -35
         }
-      }
+      } */
     }
   },
-  computed: {
+  /*   computed: {
     google: gmapApi
     /*  infoWindowPosition () {
       return {
         lat: parseFloat(this.activedriver.lat),
         lng: parseFloat(this.activedriver.lng)
       }
-    } */
-  },
+    }
+  }, */
   methods: {
-    getPosition (item) {
+    /*    getPosition (item) {
       return {
         lat: parseFloat(item.lat),
         lng: parseFloat(item.lng)
       }
-    },
-    getCoords () {
+    }, */
+    /*     getCoords () {
       navigator.geolocation.getCurrentPosition((position) => {
         this.currentlocation = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         }
       })
-    }
+    } */
     /*    handleInfoWindowClose () {
       this.activedriver = []
       this.infoWindowOpened = false
     } */
   },
   created () {
-    this.getCoords()
+    // this.getCoords()
   }
 }
 </script>
 <style scoped>
-.gm-style .gm-style-iw-c {
+/* .gm-style .gm-style-iw-c {
   padding: 4px !important;
   max-height: 48px !important;
   color: rgba(67, 56, 202, 1) !important;
-}
+} */
 .iq-progress-bar {
     background: #eef1f7;
     box-shadow: 0 0 0;

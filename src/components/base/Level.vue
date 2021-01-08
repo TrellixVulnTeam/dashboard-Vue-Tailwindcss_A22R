@@ -2,13 +2,13 @@
     <div>
         <div class="mx-10 px-8">
         <div class="grid grid-cols-3 gap-4 my-12">
-            <div class="bg-white rounded-xl">
+            <div class="bg-white rounded-xl shadow">
                 <div class="p-6">
                     <div><p class="text-gray-700 text-xl">Best Person</p></div>
                     <div class="my-3">
                         <div :class="`shadow-md rounded-md p-3 my-4 flex justify-between items-center ${item.cborder}`" v-for="(item,index) in persons" :key="index">
                             <div class="flex">
-                                <div class="img w-12 h-12"><img class="rounded-full" src="@/assets/images/avataruser.jpg"></div>
+                                <div class="img w-12 h-12"><img class="rounded-full" :src="item.avatar"></div>
                                 <div class="mx-2">
                                     <p class="text-gray-700">{{item.name}}</p>
                                     <p class="text-gray-500 text-sm">{{item.due}}</p>
@@ -238,10 +238,10 @@ export default {
   data () {
     return {
       persons: [
-        { name: 'Pete Sariya', due: '24 jan, 2020', no: 157, cborder: 'primary' },
-        { name: 'Anna Mull', due: '15 feb, 2020', no: 280, cborder: 'success' },
-        { name: 'Alex john', due: '05 March, 2020', no: 200, cborder: 'danger' },
-        { name: 'Cliff Hanger', due: '10 April, 2020', no: 150, cborder: 'info' }
+        { name: 'Pete Sariya', due: '24 jan, 2020', no: 157, cborder: 'primary', avatar: require('@/assets/staff/06.jpg') },
+        { name: 'Anna Mull', due: '15 feb, 2020', no: 280, cborder: 'success', avatar: require('@/assets/staff/07.jpg') },
+        { name: 'Alex john', due: '05 March, 2020', no: 200, cborder: 'danger', avatar: require('@/assets/staff/08.jpg') },
+        { name: 'Cliff Hanger', due: '10 April, 2020', no: 150, cborder: 'info', avatar: require('@/assets/staff/09.jpg') }
       ],
       primary: '#007bff',
       success: '#28a745',

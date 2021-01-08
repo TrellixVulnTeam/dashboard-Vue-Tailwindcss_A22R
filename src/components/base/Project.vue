@@ -12,8 +12,8 @@
                 <p class="text-gray-800">{{card.name}}</p>
                 <p class="text-gray-600 mb-3">{{card.description}}</p>
                 <div class="team flex items-center">
-               <a class="avatar w-10 h-10 mr-2"><img class="rounded-full" src="@/assets/staff/07.jpg"></a>
-                <a class="avatar w-10 h-10 mr-2"><img class="rounded-full" src="@/assets/staff/06.jpg"></a>
+                <a class="avatar w-8 h-8 mr-2"><img class="rounded-full" src="@/assets/staff/07.jpg"></a>
+                <a class="avatar w-8 h-8 mr-2"><img class="rounded-full" src="@/assets/staff/06.jpg"></a>
               </div>
               </div>
             </div>
