@@ -8,8 +8,6 @@ import Staffs from '@/components/base/Staffs.vue'
 import Stations from '@/components/base/Stations.vue'
 import Calender from '@/components/base/Calender.vue'
 import Product from '@/components/base/Product.vue'
-import Appoinement from '@/components/base/Appointment.vue'
-import BloodGroup from '@/components/base/BloodGroup.vue'
 import GoldenCalculator from '@/components/base/GoldenCalculator.vue'
 import Level from '@/components/base/Level.vue'
 Vue.use(VueRouter)
@@ -23,8 +21,6 @@ const routes = [
   { path: '/stations', name: 'stations', component: Stations },
   { path: '/calender', name: 'Calender', component: Calender },
   { path: '/product', name: 'product', component: Product },
-  { path: '/appointment', name: 'appoinement', component: Appoinement },
-  { path: '/bloodgroup/:group', name: 'BloodGroup', component: BloodGroup, props: true },
   { path: '/GoldenCalculator', name: 'GoldenCalculator', component: GoldenCalculator }
 ]
 

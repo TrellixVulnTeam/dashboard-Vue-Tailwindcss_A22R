@@ -83,7 +83,7 @@
                     </div>
                     <div  class="my-4 text-center text-base text-indigo-600 space-y-2">
                         <p>{{item.name}}</p>
-                        <span class="bg-blue-400 text-white rounded-xl px-1">{{item.type}}</span>
+                        <span>{{item.type}}</span>
                         <p>{{item.enail}}</p>
                         <p class="text-gray-700">{{item.tel}}</p>
                     </div>
@@ -136,6 +136,6 @@ export default {
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <style scoped>
 .bg-cover{
-    background-color: rgba(85,110,230,.25)!important;
+    background-color: rgba(85,110,230,.10)!important;
 }
 </style>
