@@ -11,13 +11,13 @@
                     <div @click="showlink = !showlink" class="flex flex-wrap px-4 py-2 d-hidden">
                         <i class=" fas fa-align-justify text-2xl text-right transform skew-y-3 mt-8 my-3 hover:text-indigo-800 cursor-pointer w-1/2 transition ease-in-out delay-100"></i>
                         </div>
-                        <i @click="selected_menu = 'Dashboard'"  :style="getclass('Dashboard')" class=" my-1   hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100" aria-hidden="true">
+                        <i @click="selected_menu = 'Dashboard1'"  :style="getclass('Dashboard1')" class=" my-1   hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100" aria-hidden="true">
                               <i class="fas fa-archway"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Home
                             </a>
                         </i>
-                        <i @click="selected_menu = 'Home'" :style="getclass('Home')" class=" my-1   hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100" aria-hidden="true">
+                        <i @click="selected_menu = 'Dashboard2'" :style="getclass('Dashboard2')" class=" my-1   hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100" aria-hidden="true">
                             <i class="fas fa-home"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Dashboard
@@ -76,13 +76,16 @@
 <div class="relative" style="min-height: 100vh;">
 <div   style=" padding-bottom: 4rem;"  class="relative">
 <Navbar/>
+<div class="m-10 my-6 px-8">
+    <p class="text-gray-700 text-lg font-semibold">{{selected_menu}}</p>
+</div>
 <div :class="tab_visible('Terms')">
     <Terms></Terms>
 </div>
-<div :class="tab_visible('Home')">
+<div :class="tab_visible('Dashboard2')">
     <Level></Level>
 </div>
-<div :class="tab_visible('Dashboard')">
+<div :class="tab_visible('Dashboard1')">
     <Dashboard></Dashboard>
 </div>
 <div :class="tab_visible('Project')">
