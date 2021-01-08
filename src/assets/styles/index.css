@@ -1,7 +1,10 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-
+*{
+    padding: 0;
+    margin: 0;
+}
 .text-truncate {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -10,4 +13,30 @@
 .img-thumbnail {
     padding: .25rem;
     background-color: #f8f8fb;
+}
+.text-2xs{
+    font-size: 8px;
+}
+.bg-twitter{
+    background-color: #50a5f1!important;
+}
+.bg-instagram{
+    background-color: #e83e8c!important;
+}
+
+@keyframes bouncex {
+0%, 100% {
+    transform: translateX(-40%);
+    animationTimingFunction: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(40%);
+    animationTimingFunction: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.bouncex{
+    animation-name: bouncex;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }

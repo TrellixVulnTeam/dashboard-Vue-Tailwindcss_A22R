@@ -9,68 +9,62 @@
                     <div  v-bind:class="{show3: !showlink }"
                     class="navigation-icons flex flex-col items-center text-gray-700  mx-6 px-2">
                     <div @click="showlink = !showlink" class="flex flex-wrap px-4 py-2 d-hidden">
-                        <i class=" fas fa-align-justify text-2xl text-right transform skew-y-3 mt-8 my-3 hover:text-indigo-800 cursor-pointer w-1/2 transition ease-in-out delay-200"></i>
+                        <i class=" fas fa-align-justify text-2xl text-right transform skew-y-3 mt-8 my-3 hover:text-indigo-800 cursor-pointer w-1/2 transition ease-in-out delay-100"></i>
                         </div>
-                        <router-link to="/" class=" my-1   hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200" aria-hidden="true">
+                        <i @click="selected_menu = 'Dashboard'"  :style="getclass('Dashboard')" class=" my-1   hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100" aria-hidden="true">
                               <i class="fas fa-archway"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Home
                             </a>
-                        </router-link>
-                        <router-link to="/dashboard" class=" my-1   hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200" aria-hidden="true">
+                        </i>
+                        <i @click="selected_menu = 'Home'" :style="getclass('Home')" class=" my-1   hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100" aria-hidden="true">
                             <i class="fas fa-home"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Dashboard
                             </a>
-                        </router-link>
-                        <router-link to="/project" class="my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
+                        </i>
+                        <i @click="selected_menu = 'Project'" :style="getclass('Project')" class="my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100">
                             <i class="fab fa-affiliatetheme"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Project
                             </a>
-                        </router-link>
-                        <router-link to="/terms"  class="my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
+                        </i>
+                        <i @click="selected_menu = 'Terms'" :style="getclass('Terms')" class="my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100">
                             <i class="fab fa-amazon-pay"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Invoice
                             </a>
-                        </router-link>
-                        <router-link to="/staffs" class="  my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
+                        </i>
+                        <i  @click="selected_menu = 'Staffs'" :style="getclass('Staffs')" class="  my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100">
                             <i class="fas fa-users"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Staffs
                             </a>
-                        </router-link >
-                        <router-link to="/stations" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
+                        </i >
+                        <i  @click="selected_menu = 'Stations'" :style="getclass('Stations')" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100">
                             <i class="fas fa-globe-europe"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Stations
                             </a>
-                        </router-link>
-                        <router-link to="/calender" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
+                        </i>
+                        <i  @click="selected_menu = 'Calender'" :style="getclass('Calender')" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100">
                             <i class="far fa-calendar-alt"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Calender
                             </a>
-                        </router-link>
-                        <router-link to="/product" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
+                        </i>
+                        <i @click="selected_menu = 'Product'" :style="getclass('Product')" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100">
                            <i class="fas fa-pager"></i>
                             <a v-show="showlink" class="text-base ml-4 font-semibold font-sans">
                             Product
                             </a>
-                        </router-link>
-                        <router-link to="/appointment" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
-                            <i class="fas fa-clock"></i>
-                            <a v-show="showlink" class="text-base ml-2 font-semibold font-sans">
-                            Appointment
-                            </a>
-                        </router-link>
-                        <router-link to="/GoldenCalculator" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-200">
+                        </i>
+                        <i @click="selected_menu = 'GoldenCalculator'" :style="getclass('GoldenCalculator')" class=" my-1  hover:text-indigo-800 cursor-pointer w-full rounded p-4 px-2 transition ease-in-out delay-100">
                             <i class="fas fa-calculator"></i>
                             <a v-show="showlink" class="text-base ml-2 font-semibold font-sans">
                             GoldenCalc
                             </a>
-                        </router-link>
+                        </i>
 
                     </div>
                 </div>
@@ -82,10 +76,35 @@
 <div class="relative" style="min-height: 100vh;">
 <div   style=" padding-bottom: 4rem;"  class="relative">
 <Navbar/>
-<!-- <div :class="tab_visible('Terms')">
-<Terms></Terms>
-</div> -->
-<router-view></router-view>
+<div :class="tab_visible('Terms')">
+    <Terms></Terms>
+</div>
+<div :class="tab_visible('Home')">
+    <Level></Level>
+</div>
+<div :class="tab_visible('Dashboard')">
+    <Dashboard></Dashboard>
+</div>
+<div :class="tab_visible('Project')">
+    <Project></Project>
+</div>
+<div :class="tab_visible('Staffs')">
+    <Staffs></Staffs>
+</div>
+<div :class="tab_visible('Product')">
+    <Product></Product>
+</div>
+<div :class="tab_visible('Stations')">
+    <Stations></Stations>
+</div>
+<div :class="tab_visible('Calender')">
+    <Calender></Calender>
+</div>
+<div :class="tab_visible('GoldenCalculator')">
+    <GoldenCalculator></GoldenCalculator>
+</div>
+
+<!-- <router-view></router-view> -->
 </div>
 <footer class="px-6 py-4 text-center text-sm w-full" style="  position: absolute;
   bottom: 0;
@@ -100,12 +119,6 @@
     </div>
 </template>
 <script>
-/*     import ProductTracker from './ProductTracker'
-    import GoldenCalculator from './GoldenCalculator'
-    import ProductGenerator from './ProductGenerator'
-    import KeywordFinder from './KeywordFinder'
-
-    import LogBoek from './LogBoek' */
 
 export default ({
 
@@ -115,10 +128,23 @@ export default ({
       bolapi: null,
       mobile_menu: false,
       showSidebar: true,
-      showlink: true
+      showlink: true,
+      selected_menu: 'Dashboard'
     }
   },
   methods: {
+    tab_visible (tab) {
+      if (tab === this.selected_menu) {
+        return 'block'
+      } else {
+        return 'hidden'
+      }
+    },
+    getclass (active) {
+      if (active === this.selected_menu) {
+        return 'background: linear-gradient(to right, rgb(130, 122, 243) 0%, rgb(180, 122, 243) 100%) !important;;color: white;'
+      }
+    }
   },
   created () {
 
@@ -128,11 +154,6 @@ export default ({
   },
 
   components: {
-    /*        ProductTracker,
-            GoldenCalculator,
-            ProductGenerator,
-            LogBoek,
-            KeywordFinder */
   }
 })
 </script>
