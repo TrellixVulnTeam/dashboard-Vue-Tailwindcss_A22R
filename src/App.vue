@@ -132,7 +132,7 @@ export default ({
       mobile_menu: false,
       showSidebar: true,
       showlink: true,
-      selected_menu: 'Dashboard'
+      selected_menu: 'Dashboard1'
     }
   },
   methods: {
